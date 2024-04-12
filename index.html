@@ -1,13 +1,65 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thirst Alert</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Whisper&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-background text-white">
+  <section alt="navbar">
+    <div class="bg-surface fixed top-0 w-screen">
+      <nav class="px-4 py-4 flex justify-between items-center">
+        <a href="#" class="select-none">
+          <img class="h-10" alt="logo" src="assets/logo_drops.svg">
+        </a>
+        <div class="desktop:hidden">
+          <button id="burger-button" class="flex items-center p-3">
+            <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+            </svg>
+          </button>
+        </div>
+        <ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 desktop:flex desktop:mx-auto desktop:items-center desktop:w-auto desktop:space-x-6">
+          <li><a class="text-2xl p-1 hover:bg-secondary" href="#home">HOME</a></li>
+          <li><a class="text-2xl p-1 hover:bg-secondary" href="#about">ABOUT</a></li>
+          <li><a class="text-2xl p-1 hover:bg-secondary" href="#contact">CONTACT US</a></li>
+        </ul>
+      </nav>
+      <div id="burger-menu" class="h-0 overflow-hidden transition-all">
+        <ul id="links" class="text-end px-3">
+          <li>
+            <a class="block p-3 text-xl font-semibold" href="#home">HOME</a>
+          </li>
+          <li>
+            <a class="block p-3 text-xl font-semibold" href="#about">ABOUT</a>
+          </li>
+          <li class="pb-5">
+            <a class="block p-3 text-xl font-semibold" href="#contact">CONTACT US</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</body>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menu = document.getElementById('burger-menu')
+    const burgerBtn = document.getElementById('burger-button')
+    const menuLinks = document.getElementById('links')
+
+    burgerBtn.addEventListener('click', () => {
+      const linksHeight = menuLinks.getBoundingClientRect().height
+      const containerHeight = menu.getBoundingClientRect().height
+      console.log(containerHeight)
+      containerHeight === 0
+        ? menu.style.height = `${linksHeight}px`
+        : menu.style.height = 0
+    })
+  })
+</script>
 </html>
