@@ -13,10 +13,17 @@ module.exports = {
         'accent': '#4FE0B5',
         'background': '#191A1F',
         'surface': '#28292F'
+      },
+      spacing: {
+        '15': '3.75rem'
+      },
+      maxHeight: {
+        '1/2vh': '50vh',
+        '3/4': '75%'
       }
     },
     screens: {
-      'mobile': '375px',
+      'mobile': '0px',
       'tablet': '640px',
       'desktop': '1024px',
     }

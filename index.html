@@ -9,27 +9,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Whisper&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-background text-white">
+<body class="bg-background mobile:mx-8 tablet:mx-16 desktop:mx-44 text-white min-h-[5000px] border-2 border-accent">
   <section alt="navbar">
-    <div class="bg-surface fixed top-0 w-screen">
-      <nav class="px-4 py-4 flex justify-between items-center">
-        <a href="#" class="select-none">
-          <img class="h-10" alt="logo" src="assets/logo_drops.svg">
-        </a>
-        <div class="desktop:hidden">
-          <button id="burger-button" class="flex items-center p-3">
-            <svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-            </svg>
-          </button>
-        </div>
-        <ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 desktop:flex desktop:mx-auto desktop:items-center desktop:w-auto desktop:space-x-6">
-          <li><a class="text-2xl p-1 hover:bg-secondary" href="#home">HOME</a></li>
-          <li><a class="text-2xl p-1 hover:bg-secondary" href="#about">ABOUT</a></li>
-          <li><a class="text-2xl p-1 hover:bg-secondary" href="#contact">CONTACT US</a></li>
-        </ul>
-      </nav>
-      <div id="burger-menu" class="h-0 overflow-hidden transition-all">
+    <nav class="bg-surface fixed top-0 left-0 w-screen h-15">
+      <a href="#" class="select-none">
+        <img class="h-10 absolute top-1/2 left-10 transform -translate-y-1/2 -translate-x-1/2" alt="logo" src="assets/logo_drops.svg">
+      </a>
+      <button id="burger-button" class="desktop:hidden">
+        <svg class="fill-current absolute h-6 w-6 top-1/2 right-3 transform -translate-y-1/2 -translate-x-1/2" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+        </svg>
+      </button>
+      <ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 desktop:flex desktop:mx-auto desktop:items-center desktop:w-auto desktop:space-x-6">
+        <li><a class="text-2xl p-5 hover:bg-secondary" href="#home">HOME</a></li>
+        <li><a class="text-2xl p-5 hover:bg-secondary" href="#about">ABOUT</a></li>
+        <li><a class="text-2xl p-5 hover:bg-secondary" href="#contact">CONTACT US</a></li>
+      </ul>
+      <div id="burger-menu" class="h-0 mt-6 overflow-hidden transition-all bg-surface">
         <ul id="links" class="text-end px-3">
           <li>
             <a class="block p-3 text-xl font-semibold" href="#home">HOME</a>
@@ -42,7 +38,18 @@
           </li>
         </ul>
       </div>
+    </nav>
+  </section>
+  <section id="home" class="h-screen flex mobile:flex-col tablet:flex-col desktop:flex-row justify-evenly items-center pt-15 border-2 border-accent">
+    <div class="mobile:w-full tablet:w-1/4 mobile:mt-10 mobile:mb-10">
+      <h1 class="text-center text-4xl desktop:text-5xl font-bold mb-5">
+        Keep your plants <p class="inline-block text-accent">alive</p>
+      </h1>
+      <p class="text-center text-xl desktop:text-2xl">
+        Say hello to Thirst Alert. Get notifications when your plants need watering.
+      </p>
     </div>
+      <img class="overflow-hidden max-h-3/4" src="assets/notification.svg" alt="test">
   </section>
 </body>
 
