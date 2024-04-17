@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth scrollbar-hide">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,9 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Whisper&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-background mobile:mx-8 tablet:mx-16 desktop:mx-44 text-white min-h-[5000px] border-2 border-accent">
+
+<!-- 8, 16, 14 -->
+<body class="bg-background text-white">
   <section alt="navbar">
-    <nav class="bg-surface fixed top-0 left-0 w-screen h-15">
+    <nav class="bg-surface fixed top-0 left-0 w-screen h-15 z-50">
       <a href="#" class="select-none">
         <img class="h-10 absolute top-1/2 left-10 transform -translate-y-1/2 -translate-x-1/2" alt="logo" src="assets/logo_drops.svg">
       </a>
@@ -20,10 +22,11 @@
           <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
         </svg>
       </button>
-      <ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 desktop:flex desktop:mx-auto desktop:items-center desktop:w-auto desktop:space-x-6">
-        <li><a class="text-2xl p-5 hover:bg-secondary" href="#home">HOME</a></li>
-        <li><a class="text-2xl p-5 hover:bg-secondary" href="#about">ABOUT</a></li>
-        <li><a class="text-2xl p-5 hover:bg-secondary" href="#contact">CONTACT US</a></li>
+      <ul class="overflow-hidden hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 desktop:flex desktop:mx-auto desktop:items-center desktop:w-auto desktop:space-x-6">
+        <li><a class="text-2xl p-3 hover:text-primary" href="#home">HOME</a></li>
+        <li><a class="text-2xl p-3 hover:text-primary" href="#about">ABOUT</a></li>
+        <li><a class="text-2xl p-3 hover:text-primary" href="#download">SHOP</a></li>
+        <li><a class="text-2xl p-3 hover:text-primary" href="#contact">CONTACT</a></li>
       </ul>
       <div id="burger-menu" class="h-0 mt-6 overflow-hidden transition-all bg-surface">
         <ul id="links" class="text-end px-3">
@@ -33,15 +36,19 @@
           <li>
             <a class="block p-3 text-xl font-semibold" href="#about">ABOUT</a>
           </li>
-          <li class="pb-5">
-            <a class="block p-3 text-xl font-semibold" href="#contact">CONTACT US</a>
+          <li>
+            <a class="block p-3 text-xl font-semibold" href="#download">SHOP</a>
+          </li>
+          <li>
+            <a class="block p-3 text-xl font-semibold" href="#contact">CONTACT</a>
           </li>
         </ul>
       </div>
     </nav>
   </section>
-  <section id="home" class="h-screen flex mobile:flex-col tablet:flex-col desktop:flex-row justify-evenly items-center pt-15 border-2 border-accent">
-    <div class="mobile:w-full tablet:w-1/4 mobile:mt-10 mobile:mb-10">
+
+  <section id="home" class="mobile:mx-8 tablet:mx-16 desktop:mx-44 h-screen flex mobile:flex-col tablet:flex-col desktop:flex-row justify-evenly items-center pt-15">
+    <div class="mobile:w-full tablet:w-2/3 mobile:mt-10 mobile:mb-10">
       <h1 class="text-center text-4xl desktop:text-5xl font-bold mb-5">
         Keep your plants <p class="inline-block text-accent">alive</p>
       </h1>
@@ -49,8 +56,107 @@
         Say hello to Thirst Alert. Get notifications when your plants need watering.
       </p>
     </div>
-      <img class="overflow-hidden max-h-3/4" src="assets/notification.svg" alt="test">
+      <img class="overflow-hidden max-h-3/4vh" src="assets/hs-img.svg" alt="test">
   </section>
+
+  <section id="about" class="mobile:mx-8 tablet:mx-16 desktop:mx-44 h-screen flex mobile:flex-col tablet:flex-col desktop:flex-row justify-evenly items-center">
+    <div class="mobile:w-full tablet:w-2/3 mobile:mt-10 mobile:mb-10">
+      <h1 class="text-center text-4xl desktop:text-5xl font-bold mb-5">
+        Every plant is different 
+      </h1>
+      <p class="text-center text-xl desktop:text-2xl">
+        Waterlogging and underwatering are more common than you think in household plants.
+        <br> 
+        <br>
+        With ThirstAlert sensors, we do the remembering, and you think about the watering.
+      </p>
+    </div>
+    <img class="overflow-hidden max-h-3/4vh" src="assets/about-img.svg" alt="test">
+  </section>
+
+  <section id="download" class="mobile:mx-8 tablet:mx-16 desktop:mx-44 h-screen flex mobile:flex-col tablet:flex-col desktop:flex-row justify-evenly items-center">
+    <div class="flex flex-col justify-center items-center mobile:w-full tablet:w-2/3 mobile:mt-10 mobile:mb-10">
+      <p class="text-center text-xl desktop:text-2xl">
+        Keep an eye on your plant’s soil moisture throughout time.
+        Let us know what type your plant is so we can tailor the exact watering needs for you.
+      </p>
+      <div class="flex mobile:flex-col tablet:flex-row m-6">
+        <button class="py-3 px-5 m-6 min-w-70 rounded-full drop-shadow-lg bg-primary font-semibold hover:bg-surface hover:drop-shadow-none">DOWNLOAD NOW</button>
+        <button class="py-3 px-5 m-6 min-w-70 rounded-full drop-shadow-lg bg-primary font-semibold hover:bg-surface hover:drop-shadow-none">BUY SENSOR</button>
+      </div>
+    </div>
+    <img class="overflow-hidden max-h-3/4vh" src="assets/shop-img.svg" alt="test">
+  </section>
+
+  <section id="contact" class="mobile:mx-8 tablet:mx-16 desktop:mx-44">
+    <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+      <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center">Contact Us</h2>
+      <p class="mb-8 lg:mb-16 font-light text-center text-white sm:text-xl">Got a technical issue? Let us know.</p>
+      <form action="#" class="space-y-8">
+          <div>
+              <label for="email" class="block mb-2 text-sm font-medium">Your email</label>
+              <input type="email" id="email" class="shadow-lg text-sm bg-surface rounded-lg focus:border-accent focus:ring-4-accent block w-full p-2.5" required>
+          </div>
+          <div>
+              <label for="subject" class="block mb-2 text-sm font-medium">Subject</label>
+              <input type="text" id="subject" class="shadow-lg text-sm bg-surface rounded-lg focus:border-accent focus:ring-4-accent block w-full p-2.5" placeholder="Let us know how we can help you" required>
+          </div>
+          <div class="sm:col-span-2">
+              <label for="message" class="block mb-2 text-sm font-medium">Your message</label>
+              <textarea id="message" rows="6" class="shadow-lg text-sm bg-surface rounded-lg focus:border-accent focus:ring-4-accent block w-full p-2.5" placeholder="Leave a comment..."></textarea>
+          </div>
+          <button type="submit" class="py-3 px-5 min-w-70 rounded-full drop-shadow-lg bg-primary font-semibold hover:bg-surface hover:drop-shadow-none">Send message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class= "bg-surface">
+    <div class="w-full max-w-screen-xl mx-0 p-4">
+        <div class="flex mobile:flex-col tablet:flex-col desktop:flex-row justify-between">
+            <a href="#home" class="p-8 flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
+                <img src="assets/logo.svg" class="h-16" alt="Thirst Alert Logo" />
+            </a>
+            <ul class="px-8 flex flex-wrap items-center mb-6 text-sm font-medium text-white-500 sm:mb-0 dark:text-white">
+                <li>
+                    <a href="#about" class="hover:text-primary me-4 md:me-6">About</a>
+                </li>
+                <li>
+                  <a href="#download" class="hover:text-primary me-4 md:me-6">Shop</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:text-primary me-4 md:me-6">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:text-primary me-4 md:me-6">Licensing</a>
+                </li>
+                <li>
+                    <a href="#contact" class="hover:text-primary">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <div class="px-8 flex flex-row desktop:justify-end tablet:justify-start mobile:justify-start">
+          <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-white-500 sm:mb-5 text-white">
+            <li>
+              <a href="www.instagram.com" class="hover:text-primary">
+                <svg class="h-8 w-8 mr-3 hover:text-primary"  width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <rect x="4" y="4" width="16" height="16" rx="4" />  <circle cx="12" cy="12" r="3" />  <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" /></svg>
+            </li>
+            <li>
+              <a href="www.facebook.com" class="hover:text-primary">
+                <svg class="h-8 w-8 mr-3 hover:text-primary"  width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" /></svg>
+              </a>
+            </li>
+            <li>
+              <a href="www.twitter.com" class="hover:text-primary">
+                <svg class="h-8 w-8 mr-3 hover:text-primary"  width="24" height="24" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">  <path stroke="none" d="M0 0h24v24H0z"/>  <path stroke="none" d="M0 0h24v24H0z"/>  <path d="M22 4.01c-1 .49-1.98.689-3 .99-1.121-1.265-2.783-1.335-4.38-.737S11.977 6.323 12 8v1c-3.245.083-6.135-1.395-8-4 0 0-4.182 7.433 4 11-1.872 1.247-3.739 2.088-6 2 3.308 1.803 6.913 2.423 10.034 1.517 3.58-1.04 6.522-3.723 7.651-7.742a13.84 13.84 0 0 0 .497 -3.753C20.18 7.773 21.692 5.25 22 4.009z" /></svg>
+              </a>
+            </li>
+          </ul>
+      </div>
+        <hr class="my-6 border-gray-700" />
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">©️ 2024 <a href="#home" class="hover:underline">Thirst Alert™️</a>. All Rights Reserved.</span>
+        <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400"> Site designed by Massimiliano Ricci.</span>
+  </footer>
+
 </body>
 
 <script>

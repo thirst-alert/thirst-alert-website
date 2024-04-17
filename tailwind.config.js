@@ -19,15 +19,18 @@ module.exports = {
       },
       maxHeight: {
         '1/2vh': '50vh',
+        '3/4vh': '75vh',
         '3/4': '75%'
       }
     },
     screens: {
       'mobile': '0px',
-      'tablet': '640px',
+      'tablet': '768px',
       'desktop': '1024px',
     }
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar-hide')
+  ]
 }
 
