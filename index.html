@@ -32,16 +32,16 @@
       <div id="burger-menu" class="h-0 mt-6 overflow-hidden transition-all bg-surface">
         <ul id="links" class="text-end px-3">
           <li>
-            <a class="block p-3 text-xl font-semibold" href="#home">HOME</a>
+            <a class="block p-3 text-xl font-semibold burger-link" href="#home">HOME</a>
           </li>
           <li>
-            <a class="block p-3 text-xl font-semibold" href="#about">ABOUT</a>
+            <a class="block p-3 text-xl font-semibold burger-link" href="#about">ABOUT</a>
           </li>
           <li>
-            <a class="block p-3 text-xl font-semibold" href="#download">SHOP</a>
+            <a class="block p-3 text-xl font-semibold burger-link" href="#download">SHOP</a>
           </li>
           <li>
-            <a class="block p-3 text-xl font-semibold" href="#contact">CONTACT</a>
+            <a class="block p-3 text-xl font-semibold burger-link" href="#contact">CONTACT</a>
           </li>
         </ul>
       </div>
@@ -89,7 +89,7 @@
     <img class="overflow-hidden max-h-3/4vh" src="assets/shop-img.svg" alt="test">
   </section>
 
-  <section id="contact" class="mobile:mx-8 tablet:mx-16 desktop:mx-44">
+  <section id="contact" class="mobile:mx-8 tablet:mx-16 desktop:mx-44 scroll-mt-15">
     <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
       <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center">Contact Us</h2>
       <p class="mb-8 lg:mb-16 font-light text-center text-white sm:text-xl">Got a technical issue? Let us know.</p>
@@ -165,11 +165,15 @@
     const menu = document.getElementById('burger-menu')
     const burgerBtn = document.getElementById('burger-button')
     const menuLinks = document.getElementById('links')
+    const burgerLinks = document.querySelectorAll('.burger-link')
+
+    burgerLinks.forEach(link => link.addEventListener('click', () => {
+      menu.style.height = 0
+    }))
 
     burgerBtn.addEventListener('click', () => {
       const linksHeight = menuLinks.getBoundingClientRect().height
       const containerHeight = menu.getBoundingClientRect().height
-      console.log(containerHeight)
       containerHeight === 0
         ? menu.style.height = `${linksHeight}px`
         : menu.style.height = 0
